@@ -11,4 +11,5 @@ object Database {
         User(5,  "elif@gmail.com", "cinar57"),
         User(6,  "aa", "aa")
     )
+
 }

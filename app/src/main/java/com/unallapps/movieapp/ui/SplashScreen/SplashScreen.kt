@@ -1,4 +1,4 @@
-package com.unallapps.movieapp.ui
+package com.unallapps.movieapp.ui.SplashScreen
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity

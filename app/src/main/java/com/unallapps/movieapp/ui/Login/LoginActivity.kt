@@ -3,7 +3,6 @@ package com.unallapps.movieapp.ui.Login
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import androidx.activity.viewModels
 import androidx.core.view.isVisible
 import androidx.lifecycle.Lifecycle
@@ -14,7 +13,8 @@ import com.example.viewmodel3.showToast
 import com.unallapps.movieapp.Data.state.LoginState
 import com.unallapps.movieapp.R
 import com.unallapps.movieapp.databinding.ActivityLoginBinding
-import com.unallapps.movieapp.ui.HomeActivity
+import com.unallapps.movieapp.ui.Home.BestMovieActivity
+import com.unallapps.movieapp.ui.MovieDetail.MovieDetail
 import kotlinx.coroutines.launch
 
 class LoginActivity : AppCompatActivity() {
@@ -43,7 +43,7 @@ class LoginActivity : AppCompatActivity() {
 
                         is LoginState.Result -> {
                             showToast("Kayıt Başarılı Hoşgeldiniz ${it.email}")
-                            val intent = Intent(this@LoginActivity, HomeActivity::class.java)
+                            val intent = Intent(this@LoginActivity, BestMovieActivity::class.java)
                             startActivity(intent)
                         }
                     }
@@ -61,7 +61,7 @@ class LoginActivity : AppCompatActivity() {
                         is LoginState.Loading -> {}
                         is LoginState.Result -> {
                             showToast("Hoşgeldiniz ${it.email}")
-                            val intent = Intent(this@LoginActivity, HomeActivity::class.java)
+                            val intent = Intent(this@LoginActivity, BestMovieActivity::class.java)
                             startActivity(intent)
                         }
 
@@ -76,20 +76,24 @@ class LoginActivity : AppCompatActivity() {
 
     private fun listeners() {
         binding.btnLogin.setOnClickListener {
-            viewModel.login(
-                binding.editTextEmail.text.toString(),
-                binding.editTextPass.text.toString(),
-            )
+            if (binding.passwordRepeat.isVisible){
+                binding.passwordRepeat.isVisible=false
+            }else{
+                viewModel.login(
+                    binding.editTextEmail.text.toString(),
+                    binding.editTextPass.text.toString(),
+                )
+            }
         }
         binding.btnSignUp.setOnClickListener {
-            if (binding.etPasswordRepeat.isVisible) {
+            if (binding.passwordRepeat.isVisible) {
                 viewModel.signUp(
                     binding.editTextEmail.text.toString(),
                     binding.editTextPass.text.toString(),
                     binding.etPasswordRepeat.text.toString()
                 )
             }
-            binding.etPasswordRepeat.isVisible = true
+            binding.passwordRepeat.isVisible = true
         }
     }
 }

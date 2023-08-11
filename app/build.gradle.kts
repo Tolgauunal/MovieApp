@@ -48,7 +48,7 @@ dependencies {
     implementation("androidx.lifecycle:lifecycle-viewmodel:2.3.1")
 
     implementation("com.airbnb.android:lottie:5.0.2")
-
+    implementation ("me.relex:circleindicator:2.1.6")
 
     implementation("androidx.core:core-ktx:1.9.0")
     implementation("androidx.appcompat:appcompat:1.6.1")
