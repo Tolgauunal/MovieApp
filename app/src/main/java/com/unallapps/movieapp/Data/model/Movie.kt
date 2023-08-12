@@ -1,8 +1,10 @@
 package com.example.viewmodel3
 
+import android.os.Parcelable
 import com.unallapps.movieapp.R
+import kotlinx.parcelize.Parcelize
 
-
+@Parcelize
 data class Movie(
     val id: Int,
     val name: Int,
@@ -12,6 +14,7 @@ data class Movie(
     val producer: String,
     val count: Int,
     val imdb: Double,
+    val videoLink:String,
     val photo: String,
     val details: Int,
     val actors: List<Actor>,
@@ -22,26 +25,98 @@ data class Movie(
     val category1: CATEGORY,
     val category2: CATEGORY = CATEGORY.NULL,
     val category3: CATEGORY = CATEGORY.NULL,
-)
+) : Parcelable
 
 val movies = mutableListOf(
+
     Movie(
         1,
-        R.string.devils_peek,
+        R.string.theFlash,
         2023,
-        98,
-        "Ben Young",
-        "Curmudgeon Films",
-        54689,
-        5.2,
-        "https://www.hdfilmcehennemi.life/uploads/poster/devil-s-peak.jpg",
-        R.string.devil_detail,
-        listOf(actor6, actor7, actor8, actor9, actor10),
-        "https://lh3.googleusercontent.com/WH-cXnc8cmPY4PlDz_riji-Lfeep2HsgGW4nD8EvhZ2HaWb8WU46IPTCFzj3_KvMd1LIDj7zMK5Zjg",
-        SIGNS.GENEL, SIGNS.OLUMSUZ, SIGNS.NULL,
-        CATEGORY.CRIME,
-        CATEGORY.ACTION,
+        110,
+        "Christina Hudson",
+        "Dc Comics",
+        56464,
+        6.9,
+        "https://rr6---sn-u0g3uxax3-pnuk.googlevideo.com/videoplayback?expire=1691959564&ei=rOzYZMvNB_3KkwaZiYSQDg&ip=191.96.106.104&id=o-AM-MHmxUeM6LUxyPxB8uF4_Wdnq2U2YCbTQuipQQsvmJ&itag=22&source=youtube&requiressl=yes&spc=UWF9f32-47RE9mJdWfyGtWsPgEePUCQ&vprv=1&svpuc=1&mime=video%2Fmp4&cnr=14&ratebypass=yes&dur=176.448&lmt=1676674963698858&fexp=24007246,24350018,51000011,51000022&beids=24350018&c=ANDROID&txp=4532434&sparams=expire%2Cei%2Cip%2Cid%2Citag%2Csource%2Crequiressl%2Cspc%2Cvprv%2Csvpuc%2Cmime%2Ccnr%2Cratebypass%2Cdur%2Clmt&sig=AOq0QJ8wRgIhALcHaBcfhEB0bb1HmpKcAGKgw5BIdOoKQoDVRfiUpgRCAiEA--Z_6-bFwkBM9RvgiZ9W666tyS81pq_8SHkTgAvRAts%3D&title=The%20Flash%20%E2%80%93%20Official%20Trailer&redirect_counter=1&rm=sn-q4fe6z76&req_id=ffd09f0481aea3ee&cms_redirect=yes&cmsv=e&ipbypass=yes&mh=L-&mip=212.174.55.47&mm=31&mn=sn-u0g3uxax3-pnuk&ms=au&mt=1691937842&mv=u&mvi=6&pl=24&lsparams=ipbypass,mh,mip,mm,mn,ms,mv,mvi,pl&lsig=AG3C_xAwRgIhAJ_mh8UDnUmnEvkYfx_mvq-bXbDpysoXXi5sHn_Qm0haAiEAnf5CdsF0QAwahcB32EYb3QpAzzAdM2NRo-qoG4dJgyQ%3D",
+        "https://www.hdfilmcehennemi.life/uploads/poster/the-flash.jpg",
+        R.string.flash_detail,
+        listOf(actor46, actor47, actor48, actor49, actor50),
+        "https://pbs.twimg.com/media/FwUuTQAWcAAGq7g.jpg:large",
+
+        SIGNS.GENEL, SIGNS.OLUMSUZ, SIGNS.NULL, CATEGORY.ACTION,
+        CATEGORY.SCI_FI
     ),
+    Movie(
+        1,
+        R.string.transformers,
+        1972,
+        127,
+        "Steven Caple Jr.",
+        "Paramount Pictures",
+        546465,
+        6.1,
+        "https://rr7---sn-u0g3uxax3-pnud.googlevideo.com/videoplayback?expire=1691949470&ei=PsXYZK7qAcSD4gHOxJnYCA&ip=195.146.6.54&id=o-ACEqBHwt1Wq_7O3yOCpCclS94WZ-Efhi67eT5AY1FGB8&itag=22&source=youtube&requiressl=yes&pcm2=yes&spc=UWF9f9vnX4MnopyKDBxsXNkKtLiAzyQ&vprv=1&svpuc=1&mime=video%2Fmp4&cnr=14&ratebypass=yes&dur=152.206&lmt=1682812248761826&fexp=24007246,24350018,51000022&beids=24350018&c=ANDROID&txp=4532434&sparams=expire%2Cei%2Cip%2Cid%2Citag%2Csource%2Crequiressl%2Cpcm2%2Cspc%2Cvprv%2Csvpuc%2Cmime%2Ccnr%2Cratebypass%2Cdur%2Clmt&sig=AOq0QJ8wRQIgFKZaAk2xywlVXeW6me-EmJpq_Sx-Cb5YfcsASAoFOb0CIQCNGNzJV4TVihi87c_dVEdp3n03NTjURE_gKWvscQI4Hg%3D%3D&title=Transformers%3A%20Rise%20of%20the%20Beasts%20%7C%20Official%20Trailer%20(2023%20Movie)&redirect_counter=1&rm=sn-4g5erz7z&req_id=4f886e26f0c4a3ee&cms_redirect=yes&cmsv=e&ipbypass=yes&mh=FR&mip=212.174.55.47&mm=31&mn=sn-u0g3uxax3-pnud&ms=au&mt=1691938149&mv=m&mvi=7&pl=24&lsparams=ipbypass,mh,mip,mm,mn,ms,mv,mvi,pl&lsig=AG3C_xAwRQIhAPFaej7F9__yEvcsFUz61GoQhhr4UDu7cBTtZJxL8uXHAiBRb4yawTqjWbE3MLM1IRZ6vpdvdf5c1VtvCWTF5kp9QA%3D%3D",
+        "https://www.hdfilmcehennemi.life/uploads/poster/transformers-rise-of-the-beasts-4.jpg",
+        R.string.transformers_detail,
+        listOf(actor56, actor57, actor58, actor59, actor60),
+        "https://news.tfw2005.com/wp-content/uploads/sites/10/2023/04/ROTB-Promotional-poster-00.jpg",
+        SIGNS.GENEL, SIGNS.OLUMSUZ, SIGNS.NULL, CATEGORY.ACTION,
+        CATEGORY.SCI_FI
+    ),
+    Movie(
+        1,
+        R.string.inception,
+        2010,
+        148,
+        "Christopher Nolan",
+        "Warner Bros.",
+        7895,
+        8.8,
+        "https://rr4---sn-u0g3uxax3-pnud.googlevideo.com/videoplayback?expire=1691942499&ei=A6rYZKHiFZW4WpGem-AC&ip=156.255.27.12&id=o-ABaC1PkYySnpPnoyAzs0m0D_5P0jgtc8SkjuAQoNaAB-&itag=22&source=youtube&requiressl=yes&spc=UWF9f4KhjYasnx5APSzOXmxfxJ6NqT0&vprv=1&svpuc=1&mime=video%2Fmp4&cnr=14&ratebypass=yes&dur=143.429&lmt=1547938602540642&fexp=24007246,24363393&c=ANDROID&txp=5535432&sparams=expire%2Cei%2Cip%2Cid%2Citag%2Csource%2Crequiressl%2Cspc%2Cvprv%2Csvpuc%2Cmime%2Ccnr%2Cratebypass%2Cdur%2Clmt&sig=AOq0QJ8wRQIhAJs4Uwbw-cSnFnZSH7iXYeqIWJjUo4CQ-4COzavxPOXqAiBNlkxqWrmSSe1YpzCw8l6xrex-NVWGPehPbiQGNifIDQ%3D%3D&title=Inception%20(2010)%20Official%20Trailer%20%231%20-%20Christopher%20Nolan%20Movie%20HD&redirect_counter=1&rm=sn-25gk67l&req_id=b90721bee8a8a3ee&cms_redirect=yes&cmsv=e&ipbypass=yes&mh=A9&mip=212.174.55.47&mm=31&mn=sn-u0g3uxax3-pnud&ms=au&mt=1691937842&mv=u&mvi=4&pl=24&lsparams=ipbypass,mh,mip,mm,mn,ms,mv,mvi,pl&lsig=AG3C_xAwRQIgcbtD_ydp4s40Rr4ijuJ8sYKErmkkrXFuuXXw5JI9f6YCIQCHHcxu03GkwGmIKjNBGC298a5lkhUlA18UXM8yZmZL6Q%3D%3D",
+        "https://www.hdfilmcehennemi.life/uploads/poster/baslangic-hd-film-izle.jpg",
+        R.string.inception_detail,
+        listOf(actor71, actor72, actor73, actor74, actor75),
+        "https://s3.eu-central-1.amazonaws.com/rausgegangen/Ts665W5SxmlqmkZsRwWD_inception-bannerjpg",
+        SIGNS.GENEL, SIGNS.OLUMSUZ, SIGNS.NULL, CATEGORY.SCI_FI
+    ),    Movie(
+        1,
+        R.string.ninja,
+        2023,
+        90,
+        "Jeff Rowe",
+        "Nickelodeon Animation Studios",
+        56154,
+        8.5,
+        "https://rr4---sn-u0g3uxax3-pnud.googlevideo.com/videoplayback?expire=1691959981&ei=Te7YZIzQDdvLx_AP36eW0Ag&ip=191.101.157.85&id=o-ACcHrfv2zQ0hyFfnsR8f-GmFEXsVNQCpjv6oFIYllGpT&itag=22&source=youtube&requiressl=yes&spc=UWF9f0Co3ZqKt5te8UKJBXK6qZDkFt0&vprv=1&svpuc=1&mime=video%2Fmp4&cnr=14&ratebypass=yes&dur=157.779&lmt=1690730921833890&fexp=24007246,24350018,51000022&beids=24350018&c=ANDROID&txp=6308224&sparams=expire%2Cei%2Cip%2Cid%2Citag%2Csource%2Crequiressl%2Cspc%2Cvprv%2Csvpuc%2Cmime%2Ccnr%2Cratebypass%2Cdur%2Clmt&sig=AOq0QJ8wRQIhALvsfL8xaEUaZ39xANAhUb4wahc7SmYMF8s03kEx21H_AiBbiiDJIUDD-H1MEqTbyDTBGpWYwGh6PngV8Mf6wIJq8w%3D%3D&title=Ninja%20Kaplumbag%CC%86alar%3A%20Mutant%20Kargas%CC%A7as%C4%B1%20%7C%20Altyaz%C4%B1l%C4%B1%20Fragman%202&redirect_counter=1&rm=sn-o09ly7e&req_id=b619010480f0a3ee&cms_redirect=yes&ipbypass=yes&mh=ns&mip=212.174.55.47&mm=31&mn=sn-u0g3uxax3-pnud&ms=au&mt=1691937911&mv=m&mvi=4&pl=24&lsparams=ipbypass,mh,mip,mm,mn,ms,mv,mvi,pl&lsig=AG3C_xAwRAIgP7fD-o70DMK9TW-4WAquxBWMJHnFrxwVyctqCChMG44CIGTRQyfjLyxOP7KR8Nl3PGJSSzsa0j8LEZ1rlWZarRiX",
+        "https://www.hdfilmcehennemi.life/uploads/poster/teenage-mutant-ninja-turtles-mutant-mayhem.jpg",
+        R.string.ninja_detail,
+        listOf(actor41, actor42, actor43, actor44, actor45),
+        "https://i.pinimg.com/originals/70/03/d9/7003d937439bf270481f3d2d7bfd918c.jpg",
+        SIGNS.GENEL, SIGNS.OLUMSUZ, SIGNS.NULL,
+        CATEGORY.SCI_FI,
+        CATEGORY.FANTASY
+    ),
+    Movie(
+        1,
+        R.string.guardiansOfGalaxy,
+        2023,
+        150,
+        "James Gunn",
+        "Marvel Studios",
+        6548,
+        8.0,
+        "https://rr3---sn-nv47lnsr.googlevideo.com/videoplayback?expire=1691960018&ei=cu7YZJLhMtqpx_AP-8KDoA8&ip=212.102.39.79&id=o-ALFwnz7S-NqVcSbeK2-fqUPwN15m3KjIE5EESecpHdle&itag=22&source=youtube&requiressl=yes&spc=UWF9f2T3eiEUh_1k6KUTCQuZriwcJIM&vprv=1&svpuc=1&mime=video%2Fmp4&cnr=14&ratebypass=yes&dur=141.873&lmt=1676755577029775&fexp=24007246&c=ANDROID&txp=4532434&sparams=expire%2Cei%2Cip%2Cid%2Citag%2Csource%2Crequiressl%2Cspc%2Cvprv%2Csvpuc%2Cmime%2Ccnr%2Cratebypass%2Cdur%2Clmt&sig=AOq0QJ8wRAIgCIdaHJu-Q5bfCPG2GngZIh9wD4Fhts6x6uh-_br87gUCIAyT9y5KIEVsrTJhuYIhO_GoCd5M2Ej3AXUbitlspKuC&title=Marvel%20Studios%E2%80%99%20Guardians%20of%20the%20Galaxy%20Vol.%203%20%7C%20New%20Trailer&rm=sn-n02xgoxufvg3-2gbz7e,sn-2gbek7e&req_id=51c76d7020bda3ee&cmsv=e&redirect_counter=2&cms_redirect=yes&ipbypass=yes&mh=kU&mip=212.174.55.47&mm=29&mn=sn-nv47lnsr&ms=rdu&mt=1691938393&mv=m&mvi=3&pl=24&lsparams=ipbypass,mh,mip,mm,mn,ms,mv,mvi,pl&lsig=AG3C_xAwRgIhAOTq7ThJlLAO0QlYA0VBprVKgkJRUnUEulktip3_bXmbAiEAoFRShjU2TfHD8YvL0l-kfTviLJg807WmKNz6E9MsflU%3D",
+        "https://www.hdfilmcehennemi.life/uploads/poster/guardians-of-the-galaxy-volume-3.jpg",
+        R.string.guardian_detail,
+        listOf(actor51, actor52, actor53, actor54, actor55),
+        "https://images.squarespace-cdn.com/content/v1/5d781378751c4a68f33aecfc/1682335141741-JGTHOGRPUZHNRPZVS6P1/facebook-banner.jpg?format=2500w",
+
+        SIGNS.GENEL, SIGNS.OLUMSUZ, SIGNS.NULL,CATEGORY.SCI_FI, CATEGORY.ACTION
+
+    ),
+
+
     Movie(
         2,
         R.string.mother_may_i,
@@ -51,13 +126,14 @@ val movies = mutableListOf(
         "Bad Grey",
         8942,
         5.1,
+        "https://rr4---sn-nv47lns6.googlevideo.com/videoplayback?expire=1691960051&ei=k-7YZPz2FJOJ6dsPkvySoAo&ip=185.225.28.231&id=o-APnGMpANeMco_--RdF_M18w7s_0-kqmm6MhY6jLAyQjE&itag=22&source=youtube&requiressl=yes&spc=UWF9fy4cjirk0pE3O-acR5N7K5PynXg&vprv=1&svpuc=1&mime=video%2Fmp4&cnr=14&ratebypass=yes&dur=100.612&lmt=1691275899648511&fexp=24007246,51000022&c=ANDROID&txp=5432434&sparams=expire%2Cei%2Cip%2Cid%2Citag%2Csource%2Crequiressl%2Cspc%2Cvprv%2Csvpuc%2Cmime%2Ccnr%2Cratebypass%2Cdur%2Clmt&sig=AOq0QJ8wRQIhAOjJhrWUsQW-WmZ3N2Fysk7II_8RbT3FCYZwAn20t-ZEAiB95v5dVsV7i9G4lD6gDXNEYLxtGCYmLxwYk_GLvH2doA%3D%3D&title=Mother%2C%20May%20I%3F%20-%20Official%20Release%20Trailer%20(2023)&rm=sn-nv4sd7z&req_id=6ba2a331dfe9a3ee&redirect_counter=2&cm2rm=sn-u0g3uxax3-pnud76&cms_redirect=yes&cmsv=e&ipbypass=yes&mh=we&mip=212.174.55.47&mm=29&mn=sn-nv47lns6&ms=rdu&mt=1691937675&mv=m&mvi=4&pl=24&lsparams=ipbypass,mh,mip,mm,mn,ms,mv,mvi,pl&lsig=AG3C_xAwRAIgTNS5Sm4JRAKu6KtfkcPY73BX5l4r2wHC4jTNI0CPyVICIBUaw80k78U1OKQ3YxESA6Nymmq3A5O--gKuJlAzqbEw",
         "https://www.hdfilmcehennemi.life/uploads/poster/mother-may-i.jpg",
         R.string.mother_detail,
         listOf(actor11, actor12, actor13, actor14, actor15),
         "https://flxt.tmsimg.com/assets/p24993779_v_h10_ab.jpg",
         SIGNS.GENEL, SIGNS.OLUMSUZ, SIGNS.NULL,
         CATEGORY.HORROR,
-        CATEGORY.CRIME
+        CATEGORY.SCI_FI
     ),
     Movie(
         3,
@@ -68,12 +144,31 @@ val movies = mutableListOf(
         "Paramount Pictures",
         5423,
         6.6,
+        "https://rr1---sn-nv47lnsd.googlevideo.com/videoplayback?expire=1691960094&ei=vu7YZLr5N6uw2roP1Zio0As&ip=202.53.146.150&id=o-AI4AM-UJHT3eg2DQSJFWmXhhNAjKAa8Kj1W_1MZ6hnek&itag=22&source=youtube&requiressl=yes&spc=UWF9f46qY5k3T4AEYXQYTxvXdbpMqZs&vprv=1&svpuc=1&mime=video%2Fmp4&cnr=14&ratebypass=yes&dur=144.822&lmt=1674175632471347&fexp=24007246,24350017,24363392&beids=24350017&c=ANDROID&txp=5532434&sparams=expire%2Cei%2Cip%2Cid%2Citag%2Csource%2Crequiressl%2Cspc%2Cvprv%2Csvpuc%2Cmime%2Ccnr%2Cratebypass%2Cdur%2Clmt&sig=AOq0QJ8wRAIgaIEtd-ZPKc-S4x_PQYWwON0nRJhONb4IJ9iBQ98qRlgCIFqfX5TYTB02jKCNm-J839AtUmEDZeLeykVwKEjASfkZ&title=Scream%20VI%20%7C%20Official%20Trailer%20(2023%20Movie)&rm=sn-nx5uxa3i-2oie7l,sn-i3b667e&req_id=a5684dfd82b8a3ee&cmsv=e&redirect_counter=2&cms_redirect=yes&ipbypass=yes&mh=SR&mip=212.174.55.47&mm=29&mn=sn-nv47lnsd&ms=rdu&mt=1691938389&mv=m&mvi=1&pl=24&lsparams=ipbypass,mh,mip,mm,mn,ms,mv,mvi,pl&lsig=AG3C_xAwRQIgW0BWgdMjfhsth_rCTfEc1O98uxGhrAEZRSrJGskI8IUCIQDKI5FlKcOjd4cBDeOYEWXmR9jp8RKUHs4JVw19w7KF8w%3D%3D",
         "https://www.hdfilmcehennemi.life/uploads/poster/scream-6-2.jpg",
         R.string.scream_detail,
         listOf(actor16, actor17, actor18, actor19, actor20),
         "https://sportshub.cbsistatic.com/i/2023/01/19/eacfd10f-ff6f-4e60-9768-07f7f2804b89/scream-vi-6-official-poster-2023-header.jpg",
         SIGNS.GENEL, SIGNS.OLUMSUZ, SIGNS.NULL,
         CATEGORY.CRIME
+    ),
+    Movie(
+        1,
+        R.string.devils_peek,
+        2023,
+        98,
+        "Ben Young",
+        "Curmudgeon Films",
+        54689,
+        5.2,
+        "https://rr6---sn-u0g3uxax3-pnuk.googlevideo.com/videoplayback?expire=1691960138&ei=6u7YZOyIHsaE8wSE6bm4Cg&ip=170.247.223.103&id=o-AKJv5JwP1-LuQ5Gm5mDXHu_a1pWZAdsqsbe08-W8EOWh&itag=22&source=youtube&requiressl=yes&spc=UWF9f4a56KkMlDTM7GGpurF_lgLBsvs&vprv=1&svpuc=1&mime=video%2Fmp4&cnr=14&ratebypass=yes&dur=103.978&lmt=1676041133059592&fexp=24007246,51000024&c=ANDROID&txp=5432434&sparams=expire%2Cei%2Cip%2Cid%2Citag%2Csource%2Crequiressl%2Cspc%2Cvprv%2Csvpuc%2Cmime%2Ccnr%2Cratebypass%2Cdur%2Clmt&sig=AOq0QJ8wRAIgG0eS5OfE8J-diZojcMEihYf7F1FYfZ3ChsUUPj1AwQYCIHIGf20C1L772x1riUixaqm3s-6eL70R-sUeXtAa6J3D&title=Devil%27s%20Peak%20-%20Official%20Trailer%20(2023)%20Billy%20Bob%20Thornton%2C%20Robin%20Wright&redirect_counter=1&rm=sn-ab5eed7z&req_id=c37c5862a45ba3ee&cms_redirect=yes&cmsv=e&ipbypass=yes&mh=oZ&mip=212.174.55.47&mm=31&mn=sn-u0g3uxax3-pnuk&ms=au&mt=1691938149&mv=m&mvi=6&pl=24&lsparams=ipbypass,mh,mip,mm,mn,ms,mv,mvi,pl&lsig=AG3C_xAwRQIgXeLp7A_W8_DrjCmcHWrVBCEbGH0cuKJ-yicRCs0tBukCIQDNoPy7IVnkHf63m9-vcNFYpOtjX-PWnBKj3_9TpeicAg%3D%3D",
+        "https://www.hdfilmcehennemi.life/uploads/poster/devil-s-peak.jpg",
+        R.string.devil_detail,
+        listOf(actor6, actor7, actor8, actor9, actor10),
+        "https://lh3.googleusercontent.com/WH-cXnc8cmPY4PlDz_riji-Lfeep2HsgGW4nD8EvhZ2HaWb8WU46IPTCFzj3_KvMd1LIDj7zMK5Zjg",
+        SIGNS.GENEL, SIGNS.OLUMSUZ, SIGNS.NULL,
+        CATEGORY.CRIME,
+        CATEGORY.ACTION,
     ),
     Movie(
         1,
@@ -84,6 +179,7 @@ val movies = mutableListOf(
         "Balcony 9 Production",
         6298,
         4.9,
+        "https://rr7---sn-u0g3uxax3-pnud.googlevideo.com/videoplayback?expire=1691960171&ei=C-_YZOOmMMHQ1gK34ZAg&ip=156.146.41.194&id=o-APYLeNhC178Js4qrrIkfX7cdiGMTrES7FnB-o6GXXUVM&itag=22&source=youtube&requiressl=yes&spc=UWF9f6D2JU1xBBMvcYozzpdwNyC74Cs&vprv=1&svpuc=1&mime=video%2Fmp4&cnr=14&ratebypass=yes&dur=146.912&lmt=1679707708538801&fexp=24007246,24363393&c=ANDROID&txp=5532434&sparams=expire%2Cei%2Cip%2Cid%2Citag%2Csource%2Crequiressl%2Cspc%2Cvprv%2Csvpuc%2Cmime%2Ccnr%2Cratebypass%2Cdur%2Clmt&sig=AOq0QJ8wRQIgXpuwIw5dc4-Gb6dKXeuMVWwnh9s-TTMWn6tiYorxVR8CIQCSQlqRcyUew-_qe8K8L2pypac-ogg8V1QkN4EoYkvMOw%3D%3D&title=Paint%20-%20Official%20Trailer%20-%20Feat.%20Owen%20Wilson%20%7C%20HD%20%7C%20IFC%20Films&redirect_counter=1&rm=sn-hpa6d76&req_id=de3892cae7b9a3ee&cms_redirect=yes&cmsv=e&ipbypass=yes&mh=YK&mip=212.174.55.47&mm=31&mn=sn-u0g3uxax3-pnud&ms=au&mt=1691937842&mv=u&mvi=7&pl=24&lsparams=ipbypass,mh,mip,mm,mn,ms,mv,mvi,pl&lsig=AG3C_xAwRgIhALZzDkM_2-mPQhiBE2jQBRV3Ngup2DzTQF0m32Bvcv3IAiEA_sNjcrwJzy8lMBWlyLMMzfF_wy2ympG_6qA1t_ba3jc%3D",
         "https://www.hdfilmcehennemi.life/uploads/poster/paint.jpg",
         R.string.paint_detail,
         listOf(actor21, actor22, actor23, actor24, actor25),
@@ -100,6 +196,7 @@ val movies = mutableListOf(
         "Castle Rock Entertainment",
         84618,
         9.3,
+        "https://rr2---sn-nv47zn7r.googlevideo.com/videoplayback?expire=1691956781&ei=zeHYZJetJ5qOx_APkL-j4AU&ip=188.213.34.140&id=o-AJK3tTs97w2qzw7ZSMKQq0h4ee5gaTHi_fgKBSZ0DILP&itag=22&source=youtube&requiressl=yes&spc=UWF9f3hMnI4ffwt2BkC1LaYcaNw7qjY&vprv=1&svpuc=1&mime=video%2Fmp4&cnr=14&ratebypass=yes&dur=160.751&lmt=1540064413471211&fexp=24007246,51000024&c=ANDROID&txp=5431432&sparams=expire%2Cei%2Cip%2Cid%2Citag%2Csource%2Crequiressl%2Cspc%2Cvprv%2Csvpuc%2Cmime%2Ccnr%2Cratebypass%2Cdur%2Clmt&sig=AOq0QJ8wRQIhAOEAQPusPl_eS4mSIcsBgp8gZLEPpTj1SoXMC9ueGo5KAiAGyZCE-vLGexG2osvb0OLATbBaNEMLeA7wmea_FtYNtQ%3D%3D&title=The%20Shawshank%20Redemption%20(1994)%20Official%20Trailer%20%231%20-%20Morgan%20Freeman%20Movie%20HD&rm=sn-pouxga5o-vu2l7e,sn-5hnese7z&req_id=900095e2f320a3ee&redirect_counter=2&cms_redirect=yes&cmsv=e&ipbypass=yes&mh=zN&mip=212.174.55.47&mm=29&mn=sn-nv47zn7r&ms=rdu&mt=1691938389&mv=m&mvi=2&pl=24&lsparams=ipbypass,mh,mip,mm,mn,ms,mv,mvi,pl&lsig=AG3C_xAwRQIgWx5qgy9ZPC5srX6tZAFWvINtdvXUgdcjKD4nIinfQOsCIQDjINxvRx7Tkdl3eF-45W9HHvGGSk6oI6ODNAuUdByx5Q%3D%3D",
         "https://www.hdfilmcehennemi.life/uploads/poster/1-esaretin-bedeli-film-izle.jpg",
         R.string.esaret_detail,
         listOf(actor26, actor27, actor28, actor29, actor30),
@@ -117,10 +214,11 @@ val movies = mutableListOf(
         "Paramount Pictures",
         154893,
         9.2,
+        "https://rr3---sn-u0g3uxax3-pnud.googlevideo.com/videoplayback?expire=1691960252&ei=XO_YZP-zFIKU0u8PuZuZkAE&ip=196.196.53.62&id=o-AG7ZsVfIDapRrGUOpbRvweOSRwJpujxuBgFY4wXkRRjl&itag=22&source=youtube&requiressl=yes&spc=UWF9f1zJIZOEeQm26quWtScfHabJzJQ&vprv=1&svpuc=1&mime=video%2Fmp4&cnr=14&ratebypass=yes&dur=120.186&lmt=1670064159747464&fexp=24007246,24363391&c=ANDROID&txp=4532434&sparams=expire%2Cei%2Cip%2Cid%2Citag%2Csource%2Crequiressl%2Cspc%2Cvprv%2Csvpuc%2Cmime%2Ccnr%2Cratebypass%2Cdur%2Clmt&sig=AOq0QJ8wRgIhAKow2JPM0jFHcU5UPBFXq_LU1V9nH7uYsJNwct5_nNkOAiEA2Mcu1ptJuwtCWn-IDSKAjxnyckXygRE4GKqwZosbcGM%3D&title=THE%20GODFATHER%20%7C%2050th%20Anniversary%20Trailer%20%7C%20Paramount%20Pictures&redirect_counter=1&rm=sn-f5fez7s&req_id=a7d99df0ac0ea3ee&cms_redirect=yes&ipbypass=yes&mh=eW&mip=212.174.55.47&mm=31&mn=sn-u0g3uxax3-pnud&ms=au&mt=1691938149&mv=m&mvi=3&pl=24&lsparams=ipbypass,mh,mip,mm,mn,ms,mv,mvi,pl&lsig=AG3C_xAwRQIhAM10Td3mnFfFaKaiQt3zuXIwzVUhbcekcvvnWbeeX6LuAiBnv3DrZn-D1d6ytFM2QQoyH8ukl_x6Hjbkgm9S3u_ePQ%3D%3D",
         "https://www.hdfilmcehennemi.life/uploads/poster/hd-the-godfather-izle.jpg",
         R.string.father_detail,
         listOf(actor31, actor32, actor33, actor34, actor35),
-        "https://www.koimoi.com/wp-content/new-galleries/2022/01/limited-re-release-to-mark-the-godfather-50th-anniversary-001.jpg",
+        "https://images5.alphacoders.com/131/1315822.jpg",
         SIGNS.GENEL, SIGNS.OLUMSUZ, SIGNS.NULL,
         CATEGORY.CRIME
     ),
@@ -133,6 +231,7 @@ val movies = mutableListOf(
         "Orion-Nove Production",
         5645,
         9.0,
+        "https://rr7---sn-u0g3uxax3-pnu6.googlevideo.com/videoplayback?expire=1691949115&ei=28PYZLnyLdKxlu8PnfGfoAI&ip=181.41.206.189&id=o-AMQdiNHyk8fwKXhc-r0XM1KhKeRgheySz5hPaYaWdWXT&itag=22&source=youtube&requiressl=yes&spc=UWF9f0NbVyQdv8Y89lGxp5t1_8E-cUk&vprv=1&svpuc=1&mime=video%2Fmp4&cnr=14&ratebypass=yes&dur=146.425&lmt=1648336365447364&fexp=24007246,24363393&c=ANDROID&txp=5318224&sparams=expire%2Cei%2Cip%2Cid%2Citag%2Csource%2Crequiressl%2Cspc%2Cvprv%2Csvpuc%2Cmime%2Ccnr%2Cratebypass%2Cdur%2Clmt&sig=AOq0QJ8wRQIgToazpUWE6kC63RKrkjqoB2sJJn3zMJD91CxGLNKZqHQCIQCYapRz9sCiwvEStd7w_Q328O9uDJpRLVXjyOYiR6tGWg%3D%3D&title=12%20ANGRY%20MEN%20(1957)%20%7C%20Official%20Trailer%20%7C%20MGM&redirect_counter=1&rm=sn-vgqee67e&req_id=aed814a234b2a3ee&cms_redirect=yes&cmsv=e&ipbypass=yes&mh=IW&mip=212.174.55.47&mm=31&mn=sn-u0g3uxax3-pnu6&ms=au&mt=1691938393&mv=m&mvi=7&pcm2cms=yes&pl=24&lsparams=ipbypass,mh,mip,mm,mn,ms,mv,mvi,pcm2cms,pl&lsig=AG3C_xAwRQIgerrhBCwJ3ZNHIs6G5-GUpH7Am7so0kMjiPG8Uyhcel8CIQDqxXUC1UK42P3dJtg1_2W5dlMpYn-Ugy2jDngimMMGAQ%3D%3D",
         "https://www.hdfilmcehennemi.life/uploads/poster/12-angry-men.jpg",
         R.string.angry_detail,
         listOf(actor36, actor37, actor38, actor39, actor40),
@@ -142,73 +241,9 @@ val movies = mutableListOf(
         CATEGORY.PSYCHOLOGIC
     ),
 
-    Movie(
-        1,
-        R.string.ninja,
-        2023,
-        90,
-        "Jeff Rowe",
-        "Nickelodeon Animation Studios",
-        56154,
-        9.2,
-        "https://www.hdfilmcehennemi.life/uploads/poster/teenage-mutant-ninja-turtles-mutant-mayhem.jpg",
-        R.string.ninja_detail,
-        listOf(actor41, actor42, actor43, actor44, actor45),
-        "https://i.pinimg.com/originals/70/03/d9/7003d937439bf270481f3d2d7bfd918c.jpg",
-        SIGNS.GENEL, SIGNS.OLUMSUZ, SIGNS.NULL,
-        CATEGORY.ANIMATION,
-        CATEGORY.FANTASY
-    ),
-    Movie(
-        1,
-        R.string.theFlash,
-        2023,
-        110,
-        "Christina Hudson",
-        "Dc Comics",
-        56464,
-        6.9,
-        "https://www.hdfilmcehennemi.life/uploads/poster/the-flash.jpg",
-        R.string.flash_detail,
-        listOf(actor46, actor47, actor48, actor49, actor50),
-        "https://pbs.twimg.com/media/FwUuTQAWcAAGq7g.jpg:large",
 
-        SIGNS.GENEL, SIGNS.OLUMSUZ, SIGNS.NULL, CATEGORY.ACTION,
-        CATEGORY.SCI_FI
-    ),
-    Movie(
-        1,
-        R.string.guardiansOfGalaxy,
-        2023,
-        150,
-        "James Gunn",
-        "Marvel Studios",
-        6548,
-        8.0,
-        "https://www.hdfilmcehennemi.life/uploads/poster/guardians-of-the-galaxy-volume-3.jpg",
-        R.string.guardian_detail,
-        listOf(actor51, actor52, actor53, actor54, actor55),
-        "https://images.squarespace-cdn.com/content/v1/5d781378751c4a68f33aecfc/1682335141741-JGTHOGRPUZHNRPZVS6P1/facebook-banner.jpg?format=2500w",
 
-        SIGNS.GENEL, SIGNS.OLUMSUZ, SIGNS.NULL, CATEGORY.ACTION,
-        CATEGORY.SCI_FI
-    ),
-    Movie(
-        1,
-        R.string.transformers,
-        1972,
-        127,
-        "Steven Caple Jr.",
-        "Paramount Pictures",
-        546465,
-        6.1,
-        "https://www.hdfilmcehennemi.life/uploads/poster/transformers-rise-of-the-beasts-4.jpg",
-        R.string.transformers_detail,
-        listOf(actor56, actor57, actor58, actor59, actor60),
-        "https://news.tfw2005.com/wp-content/uploads/sites/10/2023/04/ROTB-Promotional-poster-00.jpg",
-        SIGNS.GENEL, SIGNS.OLUMSUZ, SIGNS.NULL, CATEGORY.ACTION,
-        CATEGORY.SCI_FI
-    ),
+
 
     Movie(
         1,
@@ -219,6 +254,7 @@ val movies = mutableListOf(
         "Fox 2000 Pictures",
         456464,
         8.8,
+        "https://rr3---sn-nv47znel.googlevideo.com/videoplayback?expire=1691960319&ei=n-_YZKz5J--l0_wP8ZWHqAQ&ip=5.182.110.218&id=o-AOMEkn_Klh2pecYVLiKvkbG9RVKYQPA-cbAotItnGVp5&itag=22&source=youtube&requiressl=yes&spc=UWF9f2HNEKe0GQXRTB0KMBtOdc49F_o&vprv=1&svpuc=1&mime=video%2Fmp4&cnr=14&ratebypass=yes&dur=146.726&lmt=1673643320213574&fexp=24007246&c=ANDROID&txp=5311224&sparams=expire%2Cei%2Cip%2Cid%2Citag%2Csource%2Crequiressl%2Cspc%2Cvprv%2Csvpuc%2Cmime%2Ccnr%2Cratebypass%2Cdur%2Clmt&sig=AOq0QJ8wRQIgZgZCc4qh3ZqeN0tTklh8SSAsyj6Dk5VwafGOC_Ap_m4CIQDd6JSZ5hJsOW-PoXfMMdf3gF2qmVexGVQ2J4oVS2wvgw%3D%3D&title=Fight%20Club%20%7C%20Modern%20Trailer%20(2020)&rm=sn-p5qell7z&req_id=e45a68793f74a3ee&redirect_counter=2&cm2rm=sn-u0g3uxax3-pnu676&cms_redirect=yes&cmsv=e&ipbypass=yes&mh=b7&mip=212.174.55.47&mm=29&mn=sn-nv47znel&ms=rdu&mt=1691937675&mv=m&mvi=3&pl=24&lsparams=ipbypass,mh,mip,mm,mn,ms,mv,mvi,pl&lsig=AG3C_xAwRQIgOGcLqV6GHeLn27L_wcIROf1f6qucytLX_hApV6bycgwCIQDB6HgMLZUyrk42Bn4AzcyKWa8BRFn3yuyoChnLj-0UhQ%3D%3D",
         "https://www.hdfilmcehennemi.life/uploads/poster/1-dovus-kulubu-izle.jpg",
         R.string.fight_detail,
         listOf(actor61, actor62, actor63, actor64, actor65),
@@ -236,6 +272,7 @@ val movies = mutableListOf(
         "Paramount Pictures",
         45133,
         8.8,
+        "https://rr5---sn-u0g3uxax3-pnuk.googlevideo.com/videoplayback?expire=1691960357&ei=xe_YZJ-ND8ua1gLk7ZLwCg&ip=143.244.41.139&id=o-AM3bs_U0K9wXL0PUpYQR5Vav8dQ1OMyCOvDMAmFzMKLc&itag=22&source=youtube&requiressl=yes&spc=UWF9f-rnPrYqTyJXz0tmWhnC9spsYD4&vprv=1&svpuc=1&mime=video%2Fmp4&cnr=14&ratebypass=yes&dur=236.379&lmt=1542640161147772&fexp=24007246,51000011,51000024&c=ANDROID&txp=5431432&sparams=expire%2Cei%2Cip%2Cid%2Citag%2Csource%2Crequiressl%2Cspc%2Cvprv%2Csvpuc%2Cmime%2Ccnr%2Cratebypass%2Cdur%2Clmt&sig=AOq0QJ8wRgIhAIpaWvfaD4wGKR-6zTslultC4aMCnKsmjuiUQvpkaXigAiEAmCzUR-crYuUM7gz2_g0N5MfrcNeTddUhfKWdnvk75yE%3D&title=Forrest%20Gump%20(1994)%20Trailer%20%231%20%7C%20Movieclips%20Classic%20Trailers&redirect_counter=1&rm=sn-5hnez77s&req_id=5aa84464a2c6a3ee&cms_redirect=yes&cmsv=e&ipbypass=yes&mh=Y0&mip=212.174.55.47&mm=31&mn=sn-u0g3uxax3-pnuk&ms=au&mt=1691938393&mv=m&mvi=5&pl=24&lsparams=ipbypass,mh,mip,mm,mn,ms,mv,mvi,pl&lsig=AG3C_xAwRQIgE7FofEWPrH6L3RrWbc7EWiPiO3ekkobj97wWFpgN7WMCIQC4Vuqf-YME0O3lvCTxhWNfwpe4uqZf-QpKhBpPONQrWQ%3D%3D",
         "https://www.hdfilmcehennemi.life/uploads/poster/1-forrest-gump-izle.jpg",
         R.string.forest_detail,
         listOf(actor66, actor67, actor68, actor69, actor70),
@@ -243,21 +280,7 @@ val movies = mutableListOf(
         SIGNS.GENEL, SIGNS.OLUMSUZ, SIGNS.NULL,
         CATEGORY.DRAMA
     ),
-    Movie(
-        1,
-        R.string.inception,
-        2010,
-        148,
-        "Christopher Nolan",
-        "Warner Bros.",
-        7895,
-        8.8,
-        "https://www.hdfilmcehennemi.life/uploads/poster/baslangic-hd-film-izle.jpg",
-        R.string.inception_detail,
-        listOf(actor71, actor72, actor73, actor74, actor75),
-        "https://s3.eu-central-1.amazonaws.com/rausgegangen/Ts665W5SxmlqmkZsRwWD_inception-bannerjpg",
-        SIGNS.GENEL, SIGNS.OLUMSUZ, SIGNS.NULL, CATEGORY.SCI_FI
-    ),
+
     Movie(
         1,
         R.string.interstellar,
@@ -267,6 +290,7 @@ val movies = mutableListOf(
         "Paramount Pictures",
         554565,
         8.7,
+        "https://rr1---sn-u0g3uxax3-pnu6.googlevideo.com/videoplayback?expire=1691945977&ei=mbfYZJaxN_6O_9EP4rSC8Aw&ip=191.96.227.71&id=o-AL1CYDKKXCL32UR2-a95kso3N7UTFvq8NZ3Ok_H-D29Z&itag=22&source=youtube&requiressl=yes&spc=UWF9f5D0sNaANCQgzmWfFVMSxvbT4OQ&vprv=1&svpuc=1&mime=video%2Fmp4&cnr=14&ratebypass=yes&dur=174.706&lmt=1579465325410617&fexp=24007246,24350017&beids=24350017&c=ANDROID&txp=5535432&sparams=expire%2Cei%2Cip%2Cid%2Citag%2Csource%2Crequiressl%2Cspc%2Cvprv%2Csvpuc%2Cmime%2Ccnr%2Cratebypass%2Cdur%2Clmt&sig=AOq0QJ8wRQIgQyIZGhg6YAKv6BIZ5nsr2LHezYffrHf4tIrcW-TUPggCIQCi2JXTi6CzRsm89hWOKDhpGJgd9F1oYiPcNPI92D826w%3D%3D&title=Interstellar%20-%20Trailer%20-%20Official%20Warner%20Bros.%20UK&redirect_counter=1&rm=sn-p5qe767z&req_id=8f2e86bdac32a3ee&cms_redirect=yes&cmsv=e&ipbypass=yes&mh=s3&mip=212.174.55.47&mm=31&mn=sn-u0g3uxax3-pnu6&ms=au&mt=1691937842&mv=u&mvi=1&pl=24&lsparams=ipbypass,mh,mip,mm,mn,ms,mv,mvi,pl&lsig=AG3C_xAwRgIhAKFE724_GJ1kyE1qIwUcJUXvw4DLtAUKxByQhFw7ufg4AiEA4oA18Ibo6cAKgSSw-wLsyLd4FyiirllU_XPy6JFnAjg%3D",
         "https://www.hdfilmcehennemi.life/uploads/poster/1-yildizlar-arasinda-film-izle.jpg",
         R.string.interstellar_detail,
         listOf(actor76, actor77, actor78, actor79, actor80),
@@ -283,6 +307,7 @@ val movies = mutableListOf(
         "Lucas Film",
         8798489,
         8.7,
+        "https://rr1---sn-nv47lnsd.googlevideo.com/videoplayback?expire=1691960463&ei=L_DYZK6LBOSh0_wPgaCSsAE&ip=102.129.153.21&id=o-AB0Bcu4KX9hCkQ9qhbBbJeIARYfOYG3NBhL3D-_oBKxE&itag=22&source=youtube&requiressl=yes&spc=UWF9f1A80xYrVtX641Uk6NLq1tgrDJ0&vprv=1&svpuc=1&mime=video%2Fmp4&cnr=14&ratebypass=yes&dur=126.548&lmt=1687671722787189&fexp=24007246,24363392&c=ANDROID&txp=1432434&sparams=expire%2Cei%2Cip%2Cid%2Citag%2Csource%2Crequiressl%2Cspc%2Cvprv%2Csvpuc%2Cmime%2Ccnr%2Cratebypass%2Cdur%2Clmt&sig=AOq0QJ8wRAIgKq50wwHFoSq_GSgwoZHe66RCzKzVpDSohmg3yyuQvOgCIDBmEBlqTu2opp2OHKrcLYEcKMc_OYQ_tDNegw1WmN8K&title=Star%20Wars%20Episode%20V%3A%20The%20Empire%20Strikes%20Back%20-%20Trailer&rm=sn-q4felr7s&req_id=f6897ace581da3ee&cmsv=e&redirect_counter=2&cm2rm=sn-u0g3uxax3-pnu67d&cms_redirect=yes&ipbypass=yes&mh=4N&mip=212.174.55.47&mm=29&mn=sn-nv47lnsd&ms=rdu&mt=1691938389&mv=m&mvi=1&pl=24&lsparams=ipbypass,mh,mip,mm,mn,ms,mv,mvi,pl&lsig=AG3C_xAwRQIgMewrmYxSPUozOOL0R3QWXmq19hOVvboTIThRKVm3Gj8CIQCkz9sMexLhUxTQgPG-6FtfkEfgVWhgTDRk2uXfRVluIQ%3D%3D",
         "https://www.hdfilmcehennemi.life/uploads/poster/yildiz-savaslari-imparatorun-donusu-izle.jpg",
         R.string.starwars_detail,
         listOf(actor81, actor82, actor83, actor84, actor85),
@@ -299,6 +324,7 @@ val movies = mutableListOf(
         "Warner Bros.",
         87887,
         8.7,
+        "https://rr3---sn-nv47lns7.googlevideo.com/videoplayback?expire=1691955431&ei=h9zYZNqmG8XjyAWAvI2oAQ&ip=31.43.190.242&id=o-AFUdNQuM69PkkkuZCuvE1YHIkYMwosXKDZuA5RPZL23Y&itag=22&source=youtube&requiressl=yes&spc=UWF9f6v1Kk6Xn1AMo01Ur0I8Q1Yn1L0&vprv=1&svpuc=1&mime=video%2Fmp4&cnr=14&ratebypass=yes&dur=139.598&lmt=1553713133655910&fexp=24007246,51000023&c=ANDROID&txp=5535432&sparams=expire%2Cei%2Cip%2Cid%2Citag%2Csource%2Crequiressl%2Cspc%2Cvprv%2Csvpuc%2Cmime%2Ccnr%2Cratebypass%2Cdur%2Clmt&sig=AOq0QJ8wRQIgY2Yu5HCQ4vwhTPsvchr6veuEK9waUu5GTMa6MJigLDYCIQCW5Apd_w9rAzJVhkYjhg95a0uRL9ydVfifIT18y_PgjA%3D%3D&title=The%20Matrix%20(1999)%20Official%20Trailer%20%231%20-%20Sci-Fi%20Action%20Movie&rm=sn-5ou5gxn-v1ie7l,sn-3c2ed76&req_id=44ffbb89ba3da3ee&cmsv=e&redirect_counter=2&cms_redirect=yes&ipbypass=yes&mh=T5&mip=212.174.55.47&mm=29&mn=sn-nv47lns7&ms=rdu&mt=1691938628&mv=m&mvi=3&pl=24&lsparams=ipbypass,mh,mip,mm,mn,ms,mv,mvi,pl&lsig=AG3C_xAwRQIhAKf61M_CE0rfgdZxceepL0761SprEysiBHaEsEtdMSJ4AiBDNLJa29XAu__7fc0uQGmwY8GRT7sH8jh-TS6ApVblVg%3D%3D",
         "https://www.hdfilmcehennemi.life/uploads/poster/hd-the-matrix-izle.jpg",
         R.string.matrix_detail,
         listOf(actor86, actor87, actor88, actor89, actor90),
@@ -315,6 +341,7 @@ val movies = mutableListOf(
         "Toho Company",
         87987,
         8.6,
+        "https://rr5---sn-nv47zn7r.googlevideo.com/videoplayback?expire=1691960564&ei=lPDYZIfdFYzv1gLApJj4CQ&ip=176.125.230.22&id=o-AKG7xXizECiGhmxEEo5JMCOih4dy7Xc45jWt2Zo9I1Ox&itag=22&source=youtube&requiressl=yes&spc=UWF9fz0A1lMVPL4-rSF6Wva3sppGlmw&vprv=1&svpuc=1&mime=video%2Fmp4&cnr=14&ratebypass=yes&dur=238.631&lmt=1523787737785792&fexp=24007246,24350017,24363391&beids=24350017&c=ANDROID&sparams=expire%2Cei%2Cip%2Cid%2Citag%2Csource%2Crequiressl%2Cspc%2Cvprv%2Csvpuc%2Cmime%2Ccnr%2Cratebypass%2Cdur%2Clmt&sig=AOq0QJ8wRQIhAJ9aZ8A9PzrZlojYLMI2O4CSCT1kLQE93OcqGODuxQU3AiAsXZeWQjoYgtvr-NJlqvzHjsiY-BSghCLL46D7TCGLzQ%3D%3D&title=Seven%20Samurai%20(1954)%20Trailer%20%231%20%7C%20Movieclips%20Classic%20Trailers&rm=sn-2gbey7z&req_id=2cf6adc67bafa3ee&redirect_counter=2&cm2rm=sn-u0g3uxax3-pnu67d&cms_redirect=yes&cmsv=e&ipbypass=yes&mh=BK&mip=212.174.55.47&mm=29&mn=sn-nv47zn7r&ms=rdu&mt=1691937675&mv=m&mvi=5&pl=24&lsparams=ipbypass,mh,mip,mm,mn,ms,mv,mvi,pl&lsig=AG3C_xAwRAIgL-Gp1Lh7j2x74FQz9BsC5hnuiUmlGRGVBlWhRht0qZgCIBY7uu4ypqONQfLq2cI_7IN3JgKXyyWOcEa6JBnCab_f",
         "https://www.hdfilmcehennemi.life/uploads/poster/seven-samurai.jpg",
         R.string.seven_detail,
         listOf(actor91, actor92, actor93, actor94, actor95),
@@ -330,6 +357,7 @@ val movies = mutableListOf(
         189,
         "Frank Darabont", "Castle Rock Entertainment", 87516,
         8.8,
+        "https://rr1---sn-nv47zne7.googlevideo.com/videoplayback?expire=1691956399&ei=T-DYZNyOMeGD2roP-dOzgAw&ip=183.182.110.125&id=o-AHUkNfmmXbrbt6wmCFRuQT9JJxSUfnjRlYe7EDzcEpsk&itag=22&source=youtube&requiressl=yes&spc=UWF9f7XA_ZNO7EtajT4cmTaKZ4nmLXs&vprv=1&svpuc=1&mime=video%2Fmp4&cnr=14&ratebypass=yes&dur=139.412&lmt=1608459066949604&fexp=24007246,24350018,24362685,51000022&beids=24350018&c=ANDROID&txp=5432432&sparams=expire%2Cei%2Cip%2Cid%2Citag%2Csource%2Crequiressl%2Cspc%2Cvprv%2Csvpuc%2Cmime%2Ccnr%2Cratebypass%2Cdur%2Clmt&sig=AOq0QJ8wRQIgCkFmr1sJlKVJkqhEYKgTcs0SDRG7qZ83uoYeNHnOolACIQDlJYS3AQ-VXmxCdKdIcmBQOu5Rslz2WDxoKn8uYJSqEA%3D%3D&title=The%20Green%20Mile%20(1999)%20Official%20Trailer%20-%20Tom%20Hanks%20Movie%20HD&rm=sn-8pxuuxaa5vn-8uxe7z,sn-i3bk77s&req_id=ff7495c00c55a3ee&cmsv=e&redirect_counter=2&cms_redirect=yes&ipbypass=yes&mh=_8&mip=212.174.55.47&mm=29&mn=sn-nv47zne7&ms=rdu&mt=1691938628&mv=m&mvi=1&pl=24&lsparams=ipbypass,mh,mip,mm,mn,ms,mv,mvi,pl&lsig=AG3C_xAwRQIhAOkx_hfjRI-Or0vH0V_2B7QEceSvElqddHiWajbwzLbMAiAyg28pknItW1mk8i-Su5olDKpO4OnIPZMf7ixULtjbNA%3D%3D",
         "https://www.hdfilmcehennemi.life/uploads/poster/1-yesil-yol-film-izle.jpg",
         R.string.green_mile_detail,
         listOf(actor96, actor97, actor98, actor99, actor100),
@@ -356,9 +384,9 @@ enum class CATEGORY(val category: Int) {
 
 enum class SIGNS(val signs: String) {
     NULL(R.string.NULL.toString()),
-    GENEL("https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/TRA%C4%B0_Genel.svg/1024px-TRA%C4%B0_Genel.svg.png"),
-    SIDDET("https://www.neoldu.com/d/other/6-20230327095636.webp"),
-    OLUMSUZ("https://www.rtukisaretler.gov.tr/img/symbols/olumsuz.png"),
-    ONUC("https://www.rtukisaretler.gov.tr/img/symbols/13yas.png")
+    GENEL("https://mavioynatici.weebly.com/uploads/1/0/9/2/109263003/970580438.png"),
+    SIDDET("https://mavioynatici.weebly.com/uploads/1/0/9/2/109263003/siddet_orig.png"),
+    OLUMSUZ("https://mavioynatici.weebly.com/uploads/1/0/9/2/109263003/olumsuz-ornek-olusturabilecek-davranislar_orig.png"),
+    SONUC("https://img.genial.ly/603b79d3fc35890f82932949/28275f1b-70a0-4422-9cd0-21c1922512d0.png")
 
 }

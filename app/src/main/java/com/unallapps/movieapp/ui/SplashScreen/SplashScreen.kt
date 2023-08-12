@@ -14,11 +14,14 @@ class SplashScreen : AppCompatActivity() {
         binding = ActivitySplashScreenBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+
+        //4 Saniye sonra intent yapıyoruz
         val delayMillis: Long = 4000 // 4 saniye
         val handler = Handler()
         handler.postDelayed(
             {
                 startActivity(Intent(this, LoginActivity::class.java))
+                finish()
             }, delayMillis
         )
     }

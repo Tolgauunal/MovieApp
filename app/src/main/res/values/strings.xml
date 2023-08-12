@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">ViewModel3</string>
+    <string name="app_name">Atoom Box</string>
     <string name="devils_peek">Devil\'s Peek</string>
     <string name="mother_may_i">Mother May I?</string>
     <string name="scream6">Çığlık 6</string>
@@ -51,5 +51,31 @@
     <string name="scream_detail">Serinin bu filminde, Ghostface cinayetlerinden sağ kurtulan dört kişi Woodsboro\'yu geride bırakır ve New York City\'de yeni bir sayfa açmaya çalışır.</string>
     <string name="mother_detail">Emmett, gizemli bir şekilde ayrı yaşadığı ve yakın zamanda ölen annesinin kişiliğini üstlenen eşi Anya ile kabus gibi bir terapi oyununa girer.</string>
     <string name="devil_detail">Kuzey Carolina\'nın Appalachian Dağları\'nda Jacob McNeely, meth ticareti yapan mafya babasına çalışmak veya sevdiği kızla sonsuza kadar dağları terk etmek arasında kalır.</string>
+    <string name="errorAtLogin">Bir Hata Oluştu</string>
+    <string name="successSignUp">Kayıt Başarılı, Hoşgeldiniz</string>
+    <string name="loginWeolcome">Hoşgeldiniz!!</string>
+    <string name="blank">Boş Bırakılamaz!!</string>
+    <string name="error">Hata!!</string>
+    <string name="usernotfound">Kullanıcı Bulunamadı!!</string>
+    <string name="passMatch">Şifreler farklı olamaz!!</string>
+    <string name="oneri">Harika bir film buldum!!</string>
+    <string name="appDoesntFound">Uygulama cihazınızda yüklü değil!!</string>
+    <string name="actorList">Aktor Listesine Erişilemiyor!!</string>
+    <string name="veriYuklenmedi">Veriler Yüklenemedi!!</string>
+    <string name="password">Şifre</string>
+    <string name="email">E-Posta</string>
+    <string name="rememberMe">Beni Hatırla</string>
+    <string name="forgotPassword">Şifremi Unuttum</string>
+    <string name="login">Giriş Yap</string>
+    <string name="signUp">Kayıt Ol</string>
+    <string name="percentLove">%97 oranında beğenildi.</string>
+    <string name="hdmovieheaven">HD FİLM CENNETİ</string>
+    <string name="search">Arama Yapabilirsiniz</string>
+    <string name="mostLoved">Çok Sevilenler</string>
+    <string name="mostWatched">Çok İzlenenler</string>
+    <string name="lastest">En Son Filmler</string>
+    <string name="imdb">IMDB Puanı :</string>
+    <string name="exit">Çıkış</string>
+    <string name="movies">Filmler</string>
 
 </resources>

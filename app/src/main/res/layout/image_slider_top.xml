@@ -37,4 +37,28 @@
         android:textSize="15sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|right"
+        android:layout_margin="16dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageView
+            android:id="@+id/imgPlay"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@drawable/play_circle" />
+
+        <ImageView
+            android:id="@+id/imgPlus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:src="@drawable/baseline_add_24" />
+
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

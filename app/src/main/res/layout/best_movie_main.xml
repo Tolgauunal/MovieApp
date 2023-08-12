@@ -5,13 +5,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#0E0E0E"
-    tools:context=".BestMovieActivity">
+    tools:context=".ui.Home.HomeMovieActivity">
 
 
     <RelativeLayout
         android:id="@+id/relative"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="35dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentBottom="false"
         android:layout_margin="10dp">
 
         <ImageView
@@ -19,6 +21,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
             android:src="@drawable/baseline_menu_24" />
 
         <ImageView
@@ -26,26 +29,30 @@
             android:layout_height="wrap_content"
             android:layout_alignLeft="@id/imgMenu"
             android:layout_alignRight="@+id/imgSearch"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentBottom="true"
             android:layout_marginLeft="50dp"
             android:layout_marginRight="50dp"
-            android:src="@drawable/baseline_menu_24" />
+            android:padding="50dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/logo" />
 
         <ImageView
             android:id="@+id/imgSearch"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
             android:layout_alignParentRight="true"
-
             android:src="@drawable/baseline_search_24" />
     </RelativeLayout>
 
 
-
     <ScrollView
+        android:id="@+id/scroll"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="50dp"
         android:layout_marginEnd="10dp"
         android:layout_marginBottom="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -58,49 +65,88 @@
             android:orientation="vertical"
             app:layout_constraintTop_toTopOf="parent">
 
-            <androidx.viewpager.widget.ViewPager
-                android:id="@+id/idViewPager"
+            <FrameLayout
                 android:layout_width="wrap_content"
-                android:layout_height="200dp" />
+                android:layout_height="wrap_content">
+
+                <androidx.viewpager.widget.ViewPager
+                    android:id="@+id/idViewPager"
+                    android:layout_width="wrap_content"
+                    android:layout_height="200dp"
+                    android:visibility="invisible" />
+
+                <ProgressBar
+                    android:id="@+id/topImageProgress"
+                    android:layout_width="75dp"
+                    android:indeterminateDrawable="@drawable/custom_progressbar"
+                    android:layout_height="75dp"
+                    android:layout_gravity="center" />
+            </FrameLayout>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
                 android:layout_marginBottom="15dp"
-                android:text="Çok Sevilenler"
+                android:text="@string/mostLoved"
                 android:textColor="@color/white"
                 android:textSize="18dp"
                 android:textStyle="bold"
                 app:layout_constraintTop_toBottomOf="@+id/ivMovies" />
 
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rvMostLiked"
+            <FrameLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                tools:listitem="@layout/best_movie_item" />
+                android:layout_height="wrap_content">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvMostLiked"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:visibility="invisible"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:listitem="@layout/last_movie_item" />
+
+                <ProgressBar
+                    android:id="@+id/mostLikeProgress"
+                    android:layout_width="75dp"
+                    android:layout_height="75dp"
+                    android:indeterminateDrawable="@drawable/custom_progressbar"
+                    android:layout_gravity="center" />
+            </FrameLayout>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
                 android:layout_marginBottom="15dp"
-                android:text="En Çok İzlenen Filmler"
+                android:text="@string/mostWatched"
                 android:textColor="@color/white"
                 android:textSize="18dp"
                 android:textStyle="bold"
                 app:layout_constraintTop_toBottomOf="@+id/ivMovies" />
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rvMostWatched"
+            <FrameLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                tools:listitem="@layout/most_movie_item" />
+                android:layout_height="wrap_content">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvMostWatched"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:visibility="invisible"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:listitem="@layout/last_movie_item" />
+
+                <ProgressBar
+                    android:id="@+id/mostWatchProgress"
+                    android:layout_width="75dp"
+                    android:indeterminateDrawable="@drawable/custom_progressbar"
+                    android:layout_height="75dp"
+                    android:layout_gravity="center" />
+            </FrameLayout>
+
 
             <TextView
                 android:layout_width="match_parent"
@@ -108,7 +154,7 @@
                 android:layout_marginTop="15dp"
                 android:layout_marginBottom="15dp"
                 android:gravity="center"
-                android:text="Bilim Kurgu"
+                android:text="@string/scifi"
                 android:textColor="@color/white"
                 android:textSize="18dp"
                 android:textStyle="bold"
@@ -118,52 +164,66 @@
                 android:layout_width="match_parent"
                 android:layout_height="300dp">
 
-                <ImageView
+                <androidx.viewpager2.widget.ViewPager2
+                    android:id="@+id/imageSliderBottom"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:alpha="0.3"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/marvel" />
+                    android:visibility="invisible" />
 
-                <ImageView
-                    android:layout_width="150dp"
-                    android:layout_height="220dp"
-                    android:layout_gravity="center"
-                    android:src="@drawable/marvel" />
+                <ProgressBar
+                    android:id="@+id/imgSliderBtProgress"
+                    android:layout_width="75dp"
+                    android:indeterminateDrawable="@drawable/custom_progressbar"
+                    android:layout_height="75dp"
+                    android:layout_gravity="center" />
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginBottom="10dp"
-                    android:gravity="center|bottom"
-                    android:text="Avengers End Game"
-                    android:textColor="@color/white"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
+                <me.relex.circleindicator.CircleIndicator3
+                    android:id="@+id/indicator"
+                    android:layout_width="wrap_content"
+                    android:layout_height="48dp"
+                    android:layout_gravity="bottom|center"
+                    android:visibility="invisible"
+                    app:ci_drawable="@drawable/dot"
+                    app:ci_drawable_unselected="@drawable/udot" />
 
             </FrameLayout>
+
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
                 android:layout_marginBottom="15dp"
-                android:text="En son filmler"
+                android:text="@string/lastest"
                 android:textColor="@color/white"
                 android:textSize="18dp"
                 android:textStyle="bold"
                 app:layout_constraintTop_toBottomOf="@+id/ivMovies" />
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rvLastWatched"
+            <FrameLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                tools:listitem="@layout/last_movie_item" />
+                android:layout_height="wrap_content">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvLastWatched"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:visibility="invisible"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:listitem="@layout/last_movie_item" />
+
+                <ProgressBar
+                    android:id="@+id/lastMovieProgress"
+                    android:layout_width="75dp"
+                    android:layout_height="75dp"
+                    android:indeterminateDrawable="@drawable/custom_progressbar"
+                    android:layout_gravity="center" />
+            </FrameLayout>
 
         </LinearLayout>
     </ScrollView>
+
     <LinearLayout
         android:id="@+id/linearShowMenu"
         android:layout_width="match_parent"
@@ -171,16 +231,16 @@
         android:layout_alignTop="@+id/relative"
         android:layout_marginLeft="10dp"
         android:layout_marginTop="30dp"
-        android:visibility="gone"
-        android:background="#2C2C2C"
+        android:background="#0E0E0E"
         android:orientation="vertical"
-        android:padding="10dp">
+        android:padding="10dp"
+        android:visibility="gone">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
-            android:text="Filmler"
+            android:text="@string/movies"
             android:textColor="@color/white"
             android:textSize="17sp" />
 
@@ -188,7 +248,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
-            android:text="En Çok İzlenen Filmler"
+            android:text="@string/mostWatched"
             android:textColor="@color/white"
             android:textSize="17sp" />
 
@@ -196,16 +256,16 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
-            android:text="En Son İzlenenler"
+            android:text="@string/mostLoved"
             android:textColor="@color/white"
             android:textSize="17sp" />
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:text="Exit"
             android:id="@+id/menuTxtEXit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:text="@string/exit"
             android:textColor="@color/white"
             android:textSize="17sp" />
     </LinearLayout>

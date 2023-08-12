@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">ViewModel3</string>
+    <string name="app_name">Atoom Box</string>
     <string name="devils_peek">Devil\'s Peek</string>
     <string name="mother_may_i">Mother May I?</string>
     <string name="scream6">Scream 6</string>
@@ -25,7 +25,7 @@
     <string name="adventure">Adventure</string>
     <string name="animation">Animation</string>
     <string name="crime">Crime</string>
-    <string name="scifi">Sci_Fi</string>
+    <string name="scifi">Science Fiction</string>
     <string name="horror">Horror</string>
     <string name="drama">Drama</string>
     <string name="fantasy">Fantastik</string>
@@ -52,4 +52,30 @@
     <string name="scream_detail">In this installment of the series, four survivors who escaped the Ghostface murders leave Woodsboro behind and attempt to start a new chapter in New York City.</string>
     <string name="mother_detail">Emmett enters a nightmarish therapy game with his estranged wife, Anya, who has mysteriously taken on the personality of his recently deceased mother.</string>
     <string name="devil_detail">In the Appalachian Mountains of North Carolina, Jacob McNeely is torn between working for his meth-dealing mob boss father or leaving the mountains forever with the girl he loves.</string>
+    <string name="errorAtLogin">Somethings Went Wrong</string>
+    <string name="successSignUp">Registration successful, welcome!</string>
+    <string name="loginWeolcome">Welcome</string>
+    <string name="blank">Cannot be left blank!!</string>
+    <string name="error">Error!</string>
+    <string name="usernotfound">User can not found!!</string>
+    <string name="passMatch">Passwords do not match!!</string>
+    <string name="oneri">You have to watch this movie!!</string>
+    <string name="appDoesntFound">Application was not found in this device</string>
+    <string name="actorList">Unable to Access Actor List</string>
+    <string name="veriYuklenmedi">Data Could Not Be Loaded</string>
+    <string name="password">Password</string>
+    <string name="email">Email</string>
+    <string name="rememberMe">Remember Me</string>
+    <string name="forgotPassword">Forgot Password</string>
+    <string name="login">Login</string>
+    <string name="signUp">Sign Up</string>
+    <string name="percentLove">%97 loved this movie</string>
+    <string name="hdmovieheaven">HD MOVIE HEAVEN</string>
+    <string name="search">Search</string>
+    <string name="mostLoved">Most Loved</string>
+    <string name="mostWatched">Most Watched</string>
+    <string name="lastest">Lastest Movies</string>
+    <string name="imdb">IMDB</string>
+    <string name="exit">Exit</string>
+    <string name="movies">Movies</string>
 </resources>
